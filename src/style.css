@@ -1,0 +1,598 @@
+:root {
+  --primary: #8c30f5;
+  --secondary: #2ec5ce;
+  --tertiary: #c31162;
+  --backgroundPrimary: #0b0d17;
+  --backgroundSecondary: #18191f;
+  --whiteText: #eeeff4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--backgroundPrimary);
+  color: var(--whiteText);
+  font-family: sans-serif;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Nav ------------------------------------------------------------------- */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  background-color: var(--backgroundPrimary);
+  z-index: 10;
+}
+
+nav ul,
+.social-media {
+  display: none;
+}
+
+.fa-bars {
+  cursor: pointer;
+  z-index: 30;
+}
+
+.fa-bars:hover {
+  color: var(--primary);
+}
+
+i:hover {
+  color: var(--tertiary);
+}
+
+li:hover {
+  color: var(--secondary);
+}
+
+.responsive-nav {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  background-color: var(--backgroundSecondary);
+}
+.responsive-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 10vh 0 0 0;
+}
+
+.responsive-li {
+  font-weight: 500;
+  color: var(--whiteText);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid var(--backgroundPrimary);
+}
+
+.responsive-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 10vh;
+  top: 33.1vh;
+  border-top: 2px solid var(--backgroundPrimary);
+}
+
+.responsive-i {
+  color: var(--whiteText);
+  padding: 1rem 0;
+}
+
+.logo {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img,
+.logo-img {
+  width: auto;
+  height: 2.5rem;
+}
+
+.logo-img:hover {
+  animation: shakeIt 1s infinite;
+}
+
+@keyframes shakeIt {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-30deg);
+  }
+
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Main ------------------------------------------------------------------- */
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+.levelup-blob,
+.games-blob {
+  position: absolute;
+  z-index: -2;
+  width: 30rem;
+  display: none;
+}
+
+.levelup-blob {
+  left: 77%;
+  top: 130px;
+}
+
+.games-blob {
+  right: 78%;
+  top: 80px;
+}
+
+.call {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  max-width: 80%;
+  text-align: center;
+  font-weight: 800;
+  /* font-size: 6.5vw; */
+  font-size: clamp(3rem, 6.5vw, 6.5rem);
+  line-height: clamp(3.5rem, 7vw, 7rem);
+  margin-bottom: 2.5rem;
+  animation-duration: 2s;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  from {
+    margin-bottom: 100%;
+    width: 100%;
+  }
+
+  75% {
+    margin-bottom: 25%;
+    width: 100%;
+  }
+
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
+}
+
+h1 span.color-change {
+  animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #00f2ff;
+  }
+  50% {
+    color: #a200ff;
+  }
+  100% {
+    color: #00f2ff;
+  }
+}
+
+p.subtitle {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 28px;
+  width: 55%;
+  font-weight: lighter;
+  color: #d6d6d8;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+button,
+.btn-form {
+  padding: 12px 32px;
+  background-color: var(--primary);
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  color: var(--whiteText);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08), 0 2px 11px rgba(0, 0, 0, 0.12),
+    0 4px 13px rgba(0, 0, 0, 0.16), 0 8px 17px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0ee3ee;
+}
+
+.btn-form:hover {
+  background: #c31162;
+}
+
+button:active {
+  background: #069ea7;
+}
+
+.btn-form:active {
+  background: #83073f;
+}
+/* Products ------------------------------------------------------------------- */
+#products-container {
+  width: 100%;
+  height: auto;
+  background-color: var(--backgroundSecondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+div.product-tile {
+  border-left: 3px solid var(--primary);
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100px;
+}
+
+.product-tile span:first-child {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+.product-tile span:last-child {
+  line-height: 1.5rem;
+  font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+}
+
+/* Discount ------------------------------------------------------------------- */
+#discount-container {
+  width: 100%;
+  height: auto;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discount-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  align-self: flex-start;
+}
+
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+}
+
+.discount-tile {
+  position: relative;
+  width: 300px;
+  margin: 1.5rem;
+}
+
+.discount {
+  padding: 1.5rem 1rem;
+  border-radius: 50%;
+  position: absolute;
+  font-weight: 300;
+  font-size: 1.5rem;
+  right: -1.5rem;
+  top: 0.3rem;
+}
+
+.image-product {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-product img {
+  width: 130%;
+}
+
+.discount-tile:nth-child(1) .image-product,
+.discount-tile:nth-child(5) .image-product,
+.discount-tile:nth-child(2) .discount,
+.discount-tile:nth-child(4) .discount {
+  background-color: var(--primary);
+}
+
+.discount-tile:nth-child(2) .image-product,
+.discount-tile:nth-child(6) .image-product,
+.discount-tile:nth-child(1) .discount,
+.discount-tile:nth-child(3) .discount {
+  background-color: var(--tertiary);
+}
+
+.discount-tile:nth-child(3) .image-product,
+.discount-tile:nth-child(4) .image-product,
+.discount-tile:nth-child(5) .discount,
+.discount-tile:nth-child(6) .discount {
+  background-color: var(--secondary);
+}
+
+.text-product {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-product span:first-child {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.text-product span:last-child {
+  font-size: 1rem;
+}
+
+/* Form ------------------------------------------------------------------- */
+.form {
+  background-color: var(--backgroundSecondary);
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.form-title {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+form {
+  background-color: var(--primary);
+  width: 80%;
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem clamp(0.6rem, 2vw, 2rem);
+  border-radius: 5px;
+}
+
+form div {
+  margin-right: 1.5rem;
+  width: 100%;
+  height: 4.8rem;
+}
+
+form label {
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
+form input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+form div input {
+  width: 100%;
+}
+
+.form-btn {
+  background-color: var(--secondary);
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Modal ------------------------------------------------------------------- */
+
+.modal-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(12, 9, 26, 0.431);
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: absolute;
+  width: 25rem;
+  background: var(--backgroundPrimary);
+  top: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.modal img {
+  background: var(--backgroundPrimary);
+  position: absolute;
+  width: 110%;
+  border-radius: 15px;
+}
+
+.modal header,
+.modal p,
+.close-modal {
+  z-index: 3;
+  padding: 1rem 3rem;
+  text-align: center;
+}
+
+.close-modal {
+  position: absolute;
+  top: -65px;
+  right: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal header {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.open-modal {
+  visibility: visible;
+}
+
+/* Footer ------------------------------------------------------------------- */
+
+footer {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Media ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+  /* Nav ------------------------------------------------------------------- */
+  nav {
+    display: grid;
+    grid-template-columns: 3rem 1fr 4rem 1fr 3rem;
+    align-items: center;
+    justify-items: center;
+  }
+
+  nav .fa-bars {
+    display: none;
+  }
+
+  nav ul,
+  nav .social-media i {
+    display: flex;
+  }
+
+  ul {
+    grid-column-start: 2;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  li {
+    font-weight: 500;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--whiteText);
+  }
+
+  .logo {
+    align-items: center;
+    justify-items: center;
+  }
+
+  div.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  i {
+    color: white;
+    margin-left: 1rem;
+  }
+
+  /* Main ------------------------------------------------------------------- */
+
+  .levelup-blob,
+  .games-blob {
+    display: flex;
+  }
+
+  /* Products ------------------------------------------------------------------- */
+
+  #products-container {
+    padding: 2rem clamp(2rem, 9vw, 9rem);
+    height: 15rem;
+  }
+
+  /* Form ------------------------------------------------------------------- */
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  form div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  form label {
+    width: 6rem;
+  }
+
+  form div:first-child {
+    width: 40%;
+  }
+
+  form div:last-of-type {
+    max-width: 50%;
+  }
+
+  .form-btn {
+    display: block;
+  }
+}
