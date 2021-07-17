@@ -2,15 +2,15 @@
   "name": "quero-mais",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
-    "test": "npm dev"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tiozzogabi/desafio1-landing-page.git"
   },
-  "author": "gabit",
+  "author": "Gabit",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tiozzogabi/desafio1-landing-page/issues"
