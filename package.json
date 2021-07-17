@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "npm dev",
-    "build": "npm build"
+    "test": "npm dev"
   },
   "repository": {
     "type": "git",
